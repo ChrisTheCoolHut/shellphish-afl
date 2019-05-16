@@ -12,4 +12,4 @@ ARCHES=$@
 echo "[*] Preparing to build afl-qemu-trace for $ARCHES"
 
 cd qemu_mode
-./build_qemu_support.sh $ARCHES
+PYTHON=/usr/bin/python2 ./build_qemu_support.sh $ARCHES

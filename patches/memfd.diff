@@ -1,6 +1,6 @@
---- memfd.c.orig	2019-01-17 17:19:16.169769882 -0700
-+++ qemu-2.10.0-rc3/util/memfd.c	2019-01-17 17:50:38.092887525 -0700
-@@ -31,20 +31,10 @@
+--- a/util/memfd.c
++++ b/util/memfd.c
+@@ -31,9 +31,7 @@
  
  #include "qemu/memfd.h"
  
@@ -10,15 +10,3 @@
 +#if defined CONFIG_LINUX && !defined CONFIG_MEMFD
  #include <sys/syscall.h>
  #include <asm/unistd.h>
- 
--static int memfd_create(const char *name, unsigned int flags)
--{
--#ifdef __NR_memfd_create
--    return syscall(__NR_memfd_create, name, flags);
--#else
--    return -1;
--#endif
--}
- #endif
- 
- #ifndef MFD_CLOEXEC
